@@ -7,6 +7,8 @@
 (function($) {
   "use strict";
 
+  var nullIcon = window.nullIcon || "icon-stop";
+
   var replaceCheckboxElement = function(checkbox, element) {
     var value = element.val(),
         id = element.attr('id'),
@@ -34,7 +36,7 @@
 
     if (checked === null) {
       element.addClass('ambiguous');
-      element.html('<i class="icon-stop"></i>');
+      element.html('<i class="' + nullIcon + '"></i>');
     } else if (checked) {
       element.addClass('checked');
       element.html('<i class="icon-ok"></i>');
